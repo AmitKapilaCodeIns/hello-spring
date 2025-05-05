@@ -3,6 +3,7 @@ package org.launchcode.hellospring.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.*;
+// https://education.launchcode.org/java-web-development/chapters/spring-controllers-and-routes/controllers-simple.html 10.1.1
 //Controllers relay messages between data (model) and views in
 // an MVC application
 @Controller
@@ -20,7 +21,7 @@ public class HelloController {
         return "Goodbye, Spring!";
     }
 
-    //Handles requests of the form /hello/hi?firstName=LaunchCode?friend=Amit
+    //Handles requests of the form /hello/hi?firstName=LaunchCode&friend=Amit
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hi")
     public String helloNameQueryParam(@RequestParam String firstName,@RequestParam String friend) {
         return "Hello, " + firstName + " " + friend + "!";
